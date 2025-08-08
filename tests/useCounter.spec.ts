@@ -16,11 +16,13 @@ describe('useCounter', () => {
     });
     expect(result.current.count).toBe(1);
 
-    act(() => {
-      result.current.setVal(5);
-      result.current.increment();
-    });
-    expect(result.current.count).toBe(6);
+      act(() => {
+        result.current.setVal(5);
+      });
+      act(() => {
+        result.current.increment();
+      });
+      expect(result.current.count).toBe(6);
   });
 
   it('should allow updating val', () => {
